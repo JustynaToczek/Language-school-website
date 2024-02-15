@@ -1,0 +1,620 @@
+@media screen and (max-width: 700px) {
+  body {
+    width: 100%;
+  }
+  .container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  #navbar label {
+    color: white;
+    background-color: #93b8a7;
+    min-width: 30px;
+    text-align: center;
+    margin: 5px;
+    display: block;
+  }
+
+  .child,
+  .dropdown-content a {
+    width: 100%;
+    border-bottom: 1px solid #fff;
+  }
+  .child,
+  .dropdown {
+    display: none;
+  }
+
+  #toggle:checked ~ .child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #toggle:checked ~ .dropdown .child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar a,
+  .child a,
+  .dropdown-content a {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .slider img {
+    max-width: 100%;
+    width: auto;
+  }
+
+  #button_oferta a {
+    font-size: 20px;
+  }
+  #button_oferta {
+    max-width: 50%;
+  }
+
+  #napis_zdjecie_drugie {
+    top: 10%;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  #napis_zdjecie_trzecie {
+    font-size: 20px;
+  }
+
+  .napis_zdjecie_drugie,
+  .napis_zdjecie_trzecie {
+    max-width: 20%;
+    max-height: 20%;
+    margin-top: 10px;
+  }
+
+  #second-content {
+    max-width: 100%;
+    width: auto;
+    margin: auto;
+    padding-bottom: 100px;
+  }
+
+  .zdjecia {
+    max-width: 100%;
+    width: auto;
+  }
+
+  #second-content h2 {
+    font-size: 18px;
+  }
+
+  #second-content p {
+    width: 100%;
+    font-weight: 600;
+  }
+  #galeria {
+    margin-left: 30px;
+    margin-right: 30px;
+    grid-template-columns: 1fr;
+  }
+  #galeria img {
+    max-width: 100%;
+    width: auto;
+  }
+  .zakładki {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .zakładki h1 {
+    font-size: 20px;
+  }
+  .scroll {
+    font-size: 15px;
+    width: auto;
+    margin: 50px;
+  }
+  .scroll-opis {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    padding-left: 250px;
+    padding-right: 250px;
+  }
+  .tabela {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  #content-kontakt {
+    max-width: 100%;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .dane_kontakowe {
+    margin-bottom: 30px;
+  }
+}
+
+#toggle {
+  display: none;
+}
+.navbar label {
+  display: none;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #fcfcfc;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  font-family: "Lato", sans-serif;
+}
+.container {
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #93b8a7;
+  width: 100%;
+  display: flex;
+  font-weight: 800;
+  justify-content: center;
+}
+.navbar:hover {
+  cursor: pointer;
+}
+
+.dropdown-content a {
+  background-color: #d9dad9;
+}
+.child,
+.dropdown-content a {
+  width: 200px;
+  font-size: 25px;
+  text-align: center;
+  padding: 20px 30px;
+  margin-bottom: 0px;
+  position: relative; /* Ustawienie pozycji relative dla .child */
+}
+.child:hover {
+  background-color: #93b8a7;
+  border-bottom: solid 3px rgb(0, 0, 0);
+}
+.dropdown-content a:hover {
+  background-color: #475a51; /*ten zielonkawy kolor: #93b8a7*/
+  border-bottom: solid 3px black;
+}
+.child a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%; /* Ustawienie wartości top na 100%, aby rozpocząć od dołu .child */
+  margin-top: 0px;
+  z-index: 2;
+}
+.dropdown {
+  display: inline-block;
+}
+.dropdown-content a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  margin-top: 5px;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navbar a:hover {
+  /* color: #82754c; */
+  animation-name: kolor;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.nazwaszkoly {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.slider {
+  margin-top: 0px;
+  margin-bottom: 60px;
+  width: 100%;
+  text-align: center;
+}
+
+.slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+#slide-1,
+#slide-2,
+#slide-3 {
+  position: relative;
+}
+
+.slides::-webkit-scrollbar {
+  width: 0px; /* Ukrycie paska przewijania */
+  height: 0px;
+}
+
+.slides > div {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  margin-right: 0.5rem;
+
+  background-image: url(img/board.png);
+}
+
+/*kropki slajdów*/
+.slider > a {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #475a51;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.slider > a:focus {
+  background: #000;
+}
+
+.slider img {
+  width: 700px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.button_oferta {
+  position: absolute;
+  bottom: 50px;
+  left: 60%;
+  transform: translateX(-50%); /*centruje napis na srodku w poziomie*/
+  width: 300px;
+  height: 75px;
+  border: none;
+  background-color: #c2695d;
+  border-radius: 10px;
+}
+
+.button_oferta a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+.napis_zdjecie_drugie {
+  position: absolute;
+  transform: translateX(-50%); /*centruje napis na srodku w poziomie */
+  left: 30%;
+  top: 10%;
+  font-size: 25px;
+  width: 300px;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 100%;
+}
+
+.napis_zdjecie_trzecie {
+  position: absolute;
+  transform: translateX(-50%); /*centruje napis na srodku w poziomie */
+  left: 30%;
+  top: 2%;
+  font-size: 25px;
+  width: 200px;
+  background-color: #2d3b6e;
+  color: #f9f9f9;
+  padding: 50px;
+  border-radius: 100%;
+}
+
+.button_oferta:hover {
+  background-color: #ebafa7;
+  animation-name: powieksz;
+  animation-duration: 2s;
+}
+
+.second-content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  padding-bottom: 150px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.zdjecia {
+  border-radius: 100%;
+  max-width: 80%;
+  width: auto;
+}
+
+.second-content h2 {
+  font-size: 30px;
+  max-width: 100%;
+  width: auto;
+  font-weight: 600;
+}
+
+.footer {
+  margin-top: 40px;
+  background-color: #ebafa7;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /*ustawienie sticky footer*/
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.tel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.galeria img {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.galeria img:hover {
+  animation-name: rotate;
+  animation-duration: 4s;
+}
+
+.galeria {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.oferta_tabela {
+  margin-top: 40px;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding-bottom: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.oferta_tabela section {
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+table {
+  border-spacing: 10px;
+}
+.tabela {
+  margin-bottom: 50px;
+}
+
+.zakładki {
+  display: flex;
+  margin-bottom: 50px;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.zakładki a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #414141;
+  font-weight: 600;
+}
+
+.zakładki a:hover {
+  color: #9e9e9e;
+}
+
+#grupowe,
+#indywidualne {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  height: 500px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  padding: 50px;
+}
+
+.scroll section {
+  text-align: center;
+}
+
+.naglowek_kontakt {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.content-kontakt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 110px;
+  font-size: 30px;
+  gap: 100px;
+}
+.dane_kontakowe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+}
+
+.kont {
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+.kont h2 {
+  font-size: 25px;
+  margin-bottom: 0;
+}
+.formularz-content {
+  padding-bottom: 100px;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.form {
+  margin-bottom: 100px;
+  padding: 80px 0px;
+  width: 100%;
+  background-color: #678e7d;
+  font-size: 20px;
+  color: #ffffff;
+}
+.form input {
+  background-color: #292828;
+  width: 300px;
+  height: 25px;
+  border-radius: 20px;
+  text-align: center;
+  color: #cdcdcd;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.form select {
+  background-color: #292828;
+  color: #cdcdcd;
+  width: 150px;
+  height: 25px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.wyslij_button {
+  margin-top: 60px;
+  width: 150px;
+  height: 50px;
+  color: #cdcdcd;
+  border: 1px solid black;
+  background-color: #515050;
+  border-radius: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.wyslij_button:hover {
+  animation-name: rotate;
+  animation-duration: 2s;
+}
+.container-okienko {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 250px;
+  border-radius: 40%;
+  background-color: #cdcdcd;
+  justify-content: center;
+  align-items: center;
+}
+.container-okienko h1 {
+  font-size: 30px;
+}
+
+.okienko {
+  text-align: center;
+}
+
+.container-okienko button {
+  margin-top: 20px;
+  width: 50px;
+  height: 40px;
+  border: none;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+@keyframes powieksz {
+  100% {
+    scale: 130%;
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes kolor {
+  100% {
+    color: #82754c;
+  }
+}
